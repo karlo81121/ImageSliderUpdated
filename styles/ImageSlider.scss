@@ -1,0 +1,165 @@
+@import "./variables.scss";
+
+@mixin margin_border() {
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+body {
+  background-color: $background_color;
+}
+
+#container {
+  background-color: $slider_container_color;
+  position: relative;
+  width: 1920px;
+  height: 730px;
+  top: -8px;
+  left: -8px;
+  overflow: hidden;
+}
+
+#first_header_box {
+  background-color: $header_footer_color;
+  border: 1px solid $header_footer_color;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  left: 490px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+#second_header_box {
+  background-color: $header_footer_color;
+  border: 1px solid $header_footer_color;
+  width: 620px;
+  height: 100px;
+  position: absolute;
+  left: 810px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+footer {
+  background-color: $header_footer_color;
+  border: 1px solid $header_footer_color;
+  width: 940px;
+  height: 100px;
+  position: absolute;
+  top: 629px;
+  left: 490px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+#upperSliderContainer {
+  max-height: 200px;
+  position: absolute;
+  width: 1230px;
+  height: 200px;
+  top: 160px;
+  right: 810px;
+  overflow: hidden;
+
+  & .upperSlider {
+    list-style-type: none;
+    display: flex;
+    height: 200px;
+    position: absolute;
+    top: -16px;
+    left: -215px;
+  }
+
+  & img {
+    @include margin_border();
+  }
+}
+
+#lowerSliderContainer {
+  max-height: 200px;
+  position: absolute;
+  width: 1080px;
+  height: 200px;
+  bottom: 160px;
+  right: 970px;
+  overflow: hidden;
+
+  & .lowerSlider {
+    list-style-type: none;
+    display: flex;
+    height: 200px;
+    position: relative;
+    top: -16px;
+    left: 35px;
+  }
+
+  & img {
+    @include margin_border();
+  }
+}
+
+.arrowContainer {
+  position: absolute;
+  width: 60px;
+  height: 130px;
+  bottom: 230px;
+  right: 810px;
+}
+
+.arrow {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  border-radius: 5px;
+  border: 1px solid $paragraph_color;
+  display: flex;
+
+  &:hover {
+    border: 1px solid $blue_color;
+    cursor: pointer;
+  }
+}
+
+#leftArrow {
+  margin-bottom: 10px; /* space between arrows */
+  background-image: url("../assets/arrow-gray-left.png");
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-image: url("../assets/arrow-blue-left.png");
+  }
+}
+
+#rightArrow {
+  background-image: url("../assets/arrow-gray-right.png");
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-image: url("../assets/arrow-blue-right.png");
+  }
+}
+
+#textContainer {
+  width: 301px;
+  height: 296px;
+  position: absolute;
+  top: 160px;
+  left: 1130px;
+
+  & h1 {
+    color: $blue_color;
+  }
+
+  & p {
+    color: $paragraph_color;
+  }
+
+  & .titleContainer {
+    width: 300px;
+    margin-left: 5px;
+  }
+
+  & .paragraphContainer {
+    width: 300px;
+    letter-spacing: 1px;
+    margin-left: 5px;
+  }
+}
